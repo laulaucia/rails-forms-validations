@@ -4,7 +4,7 @@
 <ul>
 <% if @owner.pets %>
 <%@owner.pets.each do |pet|%>
-  <li><%= pet.name %><br> <%= pet.species %></li>
+  <li><%= pet.name %>, a beautiful <%= pet.species %></li>
   <% end %>
 <% else %>
 YOU HAVE NO PETS!

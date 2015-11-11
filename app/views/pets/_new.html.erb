@@ -1,4 +1,4 @@
-<h2>Make a new pet</h2>
+<h2>Make a new</h2>
 <div class='pet-form'>
   <%= form_for [@owner, @pet] do |f| %>
 
@@ -19,20 +19,22 @@
   <p class="pet-form-title">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
-    <%= f.label :species %>
+   <h3> Species </h3>
     <br>
-    <%= radio_button_tag(:species, "dog") %>
-	<%= label_tag(:species_dog, "Dog") %>
-	<%= radio_button_tag(:species, "Cat") %>
-	<%= label_tag(:species_cat, "Cat") %>
-	<%= radio_button_tag(:species, "hamster") %>
-	<%= label_tag(:species_hamster, "Hamster") %>
-	<%= radio_button_tag(:species, "Snake") %>
-	<%= label_tag(:species_snake, "Snake") %>
-	<%= radio_button_tag(:species, "flamingo") %>
-	<%= label_tag(:species_flamingo, "Flamingo") %>
-	<%= radio_button_tag(:species, "Mantis Shrimp") %>
-	<%= label_tag(:species_mantis_shrimp, "Mantis Shrimp") %>
+    
+	<%= f.label(:species_dog, "Dog") %>
+	<%= f.radio_button(:species, "Dog") %>
+	<%= f.label(:species_cat, "Cat") %>
+	<%= f.radio_button(:species, "Cat") %>
+	<%= f.label(:species_hamster, "Hamster") %>
+	<%= f.radio_button(:species, "Hamster") %>
+	<%= f.label :species_snake, "Snake" %>
+	<%= f.radio_button :species, "Snake" %>
+	<%= f.label(:species_flamingo, "Flamingo") %>
+	<%= f.radio_button(:species, "Flamingo") %>
+	<%= f.label(:species_mantis_shrimp, "Mantis Shrimp") %>
+	<%= f.radio_button(:species, "Mantis Shrimp") %>
+	
   </p>
 
   <p class="pet-form-submit">
