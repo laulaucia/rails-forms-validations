@@ -1,6 +1,13 @@
 <h2>Hi, <%= @owner.name %></h2>
-
+<%= render partial: 'pets/new'%>
 <h2>Pets</h2>
 <ul>
-  <li>Pets go here</li>
+<% if @owner.pets %>
+<%@owner.pets.each do |pet|%>
+  <li><%= pet.name %><br> <%= pet.species %></li>
+  <% end %>
+<% else %>
+YOU HAVE NO PETS!
+
+<%end %>
 </ul>

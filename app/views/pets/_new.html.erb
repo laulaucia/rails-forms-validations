@@ -1,0 +1,44 @@
+<h2>Make a new pet</h2>
+<div class='pet-form'>
+  <%= form_for [@owner, @pet] do |f| %>
+
+  <% if @pet.errors.any? %>
+  <div id="error_explanation">
+    <h2 class="error-warning">
+      <%= pluralize(@pet.errors.count, "error") %> prohibited
+      this pet from being saved:
+    </h2>
+    <ul>
+      <% @pet.errors.full_messages.each do |msg| %>
+      <li class="error-message"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p class="pet-form-title">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :species %>
+    <br>
+    <%= radio_button_tag(:species, "dog") %>
+	<%= label_tag(:species_dog, "Dog") %>
+	<%= radio_button_tag(:species, "Cat") %>
+	<%= label_tag(:species_cat, "Cat") %>
+	<%= radio_button_tag(:species, "hamster") %>
+	<%= label_tag(:species_hamster, "Hamster") %>
+	<%= radio_button_tag(:species, "Snake") %>
+	<%= label_tag(:species_snake, "Snake") %>
+	<%= radio_button_tag(:species, "flamingo") %>
+	<%= label_tag(:species_flamingo, "Flamingo") %>
+	<%= radio_button_tag(:species, "Mantis Shrimp") %>
+	<%= label_tag(:species_mantis_shrimp, "Mantis Shrimp") %>
+  </p>
+
+  <p class="pet-form-submit">
+    <%= f.submit %>
+  </p>
+
+  <% end %>
+
+</div>
